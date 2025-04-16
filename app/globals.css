@@ -76,6 +76,15 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+  --transition-fast: 150ms;
+  --transition-normal: 250ms;
+  --transition-slow: 350ms;
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --focus-ring-color: oklch(0.705 0.015 286.067 / 0.5);
+  --focus-ring-width: 3px;
+  --focus-ring-offset: 2px;
 }
 
 .dark {
@@ -118,5 +127,72 @@
   }
   body {
     @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  :focus-visible {
+    outline: var(--focus-ring-width) solid var(--focus-ring-color);
+    outline-offset: var(--focus-ring-offset);
+  }
+  a {
+    @apply transition-colors duration-200;
+    &:hover {
+      @apply text-primary;
+    }
+  }
+  button, 
+  [type='button'],
+  [type='reset'],
+  [type='submit'] {
+    @apply transition-all duration-200;
+    &:active {
+      transform: scale(0.98);
+    }
+    &:disabled {
+      @apply opacity-50 cursor-not-allowed;
+    }
+  }
+  input, 
+  textarea, 
+  select {
+    @apply transition-all duration-200;
+    &:focus {
+      @apply ring-2 ring-primary/50;
+    }
+    &:disabled {
+      @apply opacity-50 cursor-not-allowed;
+    }
+  }
+  .card {
+    @apply transition-shadow duration-200;
+    &:hover {
+      @apply shadow-lg;
+    }
+  }
+  .page-transition-enter {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  .page-transition-enter-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: opacity var(--transition-normal) var(--ease-default),
+                transform var(--transition-normal) var(--ease-default);
+  }
+  .page-transition-exit {
+    opacity: 1;
+  }
+  .page-transition-exit-active {
+    opacity: 0;
+    transition: opacity var(--transition-normal) var(--ease-default);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-timing-function: var(--ease-default);
+    transition-duration: var(--transition-normal);
   }
 }

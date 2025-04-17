@@ -16,11 +16,16 @@ export interface Skill {
   items: string[];
 }
 
+export interface Description {
+  name: string;
+  items: string[];
+}
+
 export interface WorkExperience {
   company: string;
   position: string;
   period: string;
-  description: string[];
+  description: Description[]
 }
 
 export interface Education {

@@ -1,93 +1,113 @@
-import { CVData } from "../../types";
+import { CVData } from "../types";
 
 export const sampleData: CVData = {
-  name: "张三",
-  title: "高级前端工程师",
+  name: "林亮怡 Chloe",
+  title: "前端工程師",
   avatar: "/avatar.jpg",
   contact: {
-    email: "zhangsan@example.com",
-    phone: "+86 123 4567 8901",
-    website: "https://zhangsan.dev",
-    github: "github.com/zhangsan",
-    linkedin: "linkedin.com/in/zhangsan"
+    email: "snsn550@gmail.com",
+    phone: "0930702456",
+    website: "https://blog-omega-gilt-59.vercel.app/",
+    github: "https://github.com/haru5386/haru5386",
+    linkedin: "https://www.linkedin.com/in/liang-yi-lin/"
   },
   location: {
-    city: "北京",
-    country: "中国"
+    city: "新北",
+    country: "台灣"
   },
-  profile: "拥有5年以上的前端开发经验，专注于构建现代化的Web应用。擅长React、TypeScript和Node.js，对性能优化和用户体验有深入理解。热衷于学习新技术，善于团队协作，具有良好的沟通能力。",
+  profile: "具備 3 年前端開發經驗，擅長使用 Vue、Nuxt 與 TypeScript 打造流暢且具互動性的 RWD 網頁。重視使用者體驗，善於將設計轉化為高效實作，提升產品可用性與使用感。樂於鑽研新技術，具備良好團隊協作與跨部門溝通能力，能快速融入團隊並貢獻產出。",
   skills: [
     {
-      category: "前端技术",
+      category: "前端技術",
       items: [
-        "React & Next.js",
+        "Vue3 & Nuxt",
+        "Shadcn",
         "TypeScript",
-        "HTML5 & CSS3",
         "Tailwind CSS",
-        "Redux & Zustand"
+        "React & Next.js",
       ]
     },
     {
-      category: "后端技术",
-      items: [
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "PostgreSQL",
-        "RESTful API"
-      ]
-    },
-    {
-      category: "开发工具",
+      category: "開發工具",
       items: [
         "Git & GitHub",
         "VS Code",
         "Docker",
-        "Jest & React Testing Library",
-        "Webpack & Vite"
+        "Vitest",
+        "Vite"
       ]
     }
   ],
   workExperience: [
     {
-      company: "科技公司A",
-      position: "高级前端工程师",
-      period: "2020 - 至今",
-      description: [
-        "负责公司核心产品的前端架构设计和开发",
-        "优化应用性能，提升用户体验",
-        "引入TypeScript和自动化测试，提高代码质量",
-        "指导团队成员，推动技术革新"
+      company: "電碼科技有限公司",
+      position: "前端工程師",
+      period: "2024 - 2025",
+      description: [{
+        name: '公司入口網站（Vue 3 + Nuxt 3 + UnoCSS）',
+        items: ['負責官網主要功能模組設計與開發，從零建立完整技術架構與組件規範',
+          '實作 動態 OG Image 產生機制，提升社群分享點擊率（Lighthouse SEO 分數提升 +30 分）',
+          '開發 加密與法幣充值功能，串接錢包與金流 API，保障交易流程安全',
+          '整合 Google / Telegram OAuth 第三方登入，簡化用戶註冊流程',
+          '使用 Nuxt Image 最佳化圖片載入，提升首屏速度與 RWD 響應性',
+          '實作 Code Splitting / Lazy Loading，減少首頁 JS 大小約 40%，提升載入效能']
+      },{
+        name: '後台管理系統（Vue 3 + UnoCSS + Ant Design Vue）',
+        items: ['從零搭建公司內部管理系統，涵蓋代理商管理、營運模組、權限管理等',
+          '與設計師共同制定 UI 組件風格，建立內部組件庫提升開發一致性',
+          '實作富文本編輯器（Tiptap），支援圖片上傳、樣式控制、內嵌連結等功能',
+          '使用 KeepAlive 建立多標籤頁功能，支援重新整理、關閉、保留頁面狀態等操作',
+        ]
+      },
       ]
     },
     {
-      company: "互联网公司B",
-      position: "前端工程师",
-      period: "2018 - 2020",
+      company: "王牌數位創意股份有限公司",
+      position: "前端工程師",
+      period: "2022 - 2024",
       description: [
-        "开发并维护多个React应用",
-        "实现响应式设计和移动端适配",
-        "优化页面加载速度和性能",
-        "参与代码审查和技术分享"
+        {
+          name: '交易所網站（Vue 2 → Vue 3 + Nuxt 3 + TypeScript + Tailwind）',
+          items: ['主導 Vue 2 → Vue 3 升級與重構，導入 Composition API 與 TypeScript，提升可維護性與類型安全',
+            '串接 WebSocket、TradingView API，實作即時現貨交易與 K 線圖功能',
+            '開發 C2C 場外交易模組，支援訂單匹配、支付流程、訂單狀態即時更新',
+            '串接第三方 KYC 系統，優化註冊與驗證流程，提升轉換率與通過率',
+            '自建 UI 元件庫（Vue 3 + Tailwind + Element Plus），加速開發效率並統一介面風格',
+            '強化登入與註冊流程的使用者體驗與安全性，減少註冊放棄率',
+            '實作 i18n 多語系機制，整合 Google Sheet 實現即時多語更新']
+        },{
+          name: 'SEO 與數據追蹤',
+          items: ['完整導入 SEO 最佳化策略（sitemap、robots.txt、JSON-LD、PWA 等）',
+            'Lighthouse SEO 分數提升 30+ 分，顯著提高搜尋能見度與自然流量',
+            '整合 GA4 與 GTM，建構轉換追蹤與事件分析模型，協助產品迭代',]
+        },{
+          name: 'NFT 官網重構（SCSS + Element Plus）',
+          items: ['重構 RWD 響應式切版邏輯，優化多裝置體驗與整體設計一致性',
+            '配合產品改版，重新調整視覺動線與元件階層',]
+        }
       ]
     }
   ],
   education: [
     {
-      institution: "某大学",
-      degree: "计算机科学与技术 学士",
-      period: "2014 - 2018",
-      description: "主修课程：数据结构、算法、计算机网络、数据库系统"
+      institution: "國立臺北科技大學",
+      degree: "創新設計研究所",
+      period: "2017 - 2019",
+      description: "工業設計、服務設計、使用者經驗"
     }
   ],
   languages: [
     {
       name: "中文",
-      level: "母语"
+      level: "母語"
     },
     {
-      name: "英语",
-      level: "流利"
+      name: "英語",
+      level: "多益 860"
+    },
+    {
+      name: "日語",
+      level: "JLPT N2"
     }
   ],
   portfolio: [
